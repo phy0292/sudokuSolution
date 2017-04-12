@@ -6,12 +6,11 @@
 #pragma once
 
 #include "targetver.h"
-#include <windows.h>
 #include <stdio.h>
 #include <tchar.h>
 #include <iostream>
 #include <stack>
 #include <unordered_set>
 #include <memory>
-
+#include "timing.h"
 // TODO: 在此处引用程序需要的其他头文件

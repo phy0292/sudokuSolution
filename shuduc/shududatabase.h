@@ -1,5 +1,13 @@
 #pragma once
-
+#ifdef __linux__
+typedef struct _points
+{
+	short x;
+	short y;
+}POINTS;
+#else
+#include <windows.h>
+#endif
 class shududatabase
 {
 public:
