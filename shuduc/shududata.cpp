@@ -7,9 +7,9 @@ std::ostream & operator<<(std::ostream &os, const shududata &c)
 	{
 		for (int j = 0; j < 9; j++)
 		{
-			for (auto v : c.data[i][j])
+			for (std::unordered_set<char>::iterator iter=c.data[i][j].begin();iter!=c.data[i][j].end();++iter)
 			{
-				os << char(v + '0');
+				os << char((*iter) + '0');
 			}
 			os << " ";
 		}
@@ -29,7 +29,11 @@ shududata::~shududata()
 
 size_t shududata::Traversal(char x, char y)
 {
-	std::unordered_set<char> set1_9= { 1,2,3,4,5,6,7,8,9 };
+	std::unordered_set<char> set1_9;
+	for(int i = 1;i <= 9;i++)
+	{
+		set1_9.insert(i);
+	}
 	for (int i = 0; i < 9; i++)
 	{//±éÀúĞĞ
 		if (data[x][i].size() == 1)
